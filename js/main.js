@@ -1,47 +1,15 @@
 const API__USERS = "https://jsonplaceholder.typicode.com"
 
-const rightBtn = document.querySelector(".right")
-const leftBtn = document.querySelector(".left")
 const loading = document.querySelector(".loading")
-const modal = document.getElementById("myModal")
-const closeModal = document.querySelector(".close")
-const modalBody = document.getElementById("modal-body")
 const wrapper = document.querySelector(".carousel__wrapper")
 
-let usersData = [];
-const itemsPerPage = 3;
-let currentPage = 1;
+
 
 window.onload = function() {
     fetchUsers(API__USERS);
 };
 
-closeModal.onclick = function() {
-  modal.style.display = "none";
-};
 
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-}
-function setupCarousel() {
-    let maxPages = Math.ceil(usersData.length / itemsPerPage);
-
-    leftBtn.onclick = () => {
-        if (currentPage > 1) {
-            currentPage--;
-            createCard();
-        }
-    };
-
-    rightBtn.onclick = () => {
-        if (currentPage < maxPages) {
-            currentPage++;
-            createCard();
-        }
-    };
-}
 
 async function fetchUsers(api) {
     try {
@@ -60,10 +28,7 @@ async function fetchUsers(api) {
 }
 
 function createUsers(data) {
-    wrapper.innerHTML = '';
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const paginatedData = usersData.slice(startIndex, endIndex);
+
 
     data.forEach((user) => {
         let card = document.createElement("div");
@@ -104,20 +69,3 @@ function showModal(id) {
         });
 }
 
-function setupCarousel() {
-    let maxPages = Math.ceil(usersData.length / itemsPerPage);
-
-    leftBtn.onclick = () => {
-        if (currentPage > 1) {
-            currentPage--;
-            createUsers();
-        }
-    };
-
-    rightBtn.onclick = () => {
-        if (currentPage < maxPages) {
-            currentPage++;
-            createUsers();
-        }
-    };
-}
