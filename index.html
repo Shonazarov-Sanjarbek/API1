@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body>
+    
+    <header class="header" id="header">
+        <section class="navbar">
+            <ul class="navbar__collection">
+                <li class="navbar__item">
+                    <a href="./page/post.html">
+                        <span>
+                            Posts
+                        </span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#">
+                        <span>
+                            codewars
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </header>
+    <main class="main" id="main">
+        <div class="loading">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        <section class="users">
+            <div class="carousel">
+                <button class="left"><</button>
+                <div class="carousel__wrapper">
+                    <div class="card">
+
+                    </div>
+                </div>
+                <button class="right">></button>
+            </div>
+        </section>
+    </main>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="modal-body"></div>
+        </div>
+      </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
